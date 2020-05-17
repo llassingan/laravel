@@ -22,7 +22,7 @@
         <a class="nav-link" href="{{url('/about')}}">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/mahasiswa')}}">Mahasiswa</a>
+        <a  class="nav-link" href="{{url('/mahasiswa')}}">Mahasiswa</a>
       </li>
     </ul>
   </div>
