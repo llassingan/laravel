@@ -25,5 +25,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('/', 'mycont@index');
-Route::get('/about', 'mycont@about');
+Route::get('/', 'Mycont@index');
+Route::get('/about', 'Mycont@about');
+Route::get('/mahasiswa', 'MahasiswaCont@index');

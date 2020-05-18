@@ -1,6 +1,6 @@
 @extends('layout/defaultpage')
 
-@section('title', 'About Belajar Mantap Jiwa')
+@section('title', 'About')
 
 @section('container')
 
@@ -10,6 +10,6 @@
 <h1 class="mt-3">Hai, {{$n2}}</h1>
 </div>
 </div>
-</div>
+</div> 
 
 @endsection
