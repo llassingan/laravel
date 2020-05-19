@@ -19,16 +19,20 @@
     </tr>
   </thead>
   <tbody>
+  <!-- templating blade dari laravel -->
+  @foreach($data as $d)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <!-- template dari laravel untuk hitung iterasi looping -->
+      <th scope="row">{{$loop-> iteration}}</th>
+      <td>{{$d->nama}}</td>
+      <td>{{$d->nim}}</td>
+      <td>{{$d->jurusan}}</td>
       <td>
         <a href="" class="badge badge-success">Edit</a>
         <a href="" class="badge badge-danger">Hapus</a>
       </td>
     </tr>
+    @endforeach
   </tbody>
 </table>
 </div>

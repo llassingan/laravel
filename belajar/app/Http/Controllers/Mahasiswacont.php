@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class Mahasiswacont extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class Mahasiswacont extends Controller
      */
     public function index()
     {
-        return view('mahasiswa.index');
+        $data= DB::table('mahasiswa')->get();
+        // dump($data);
+        return view('mahasiswa.index',['data'=>$data]);
     }
 
     /**
