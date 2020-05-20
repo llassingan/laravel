@@ -13,7 +13,8 @@ class Mahasiswacont extends Controller
      */
     public function index()
     {
-        $data= DB::table('mahasiswa')->get();
+        // $data= DB::table('students')->get();          Query builder ver.
+        $data = \App\Student::all();  //Eloquent ver.
         // dump($data);
         return view('mahasiswa.index',['data'=>$data]);
     }
