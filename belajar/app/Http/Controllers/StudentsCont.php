@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Student;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-class Mahasiswacont extends Controller
+
+class StudentsCont extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +14,9 @@ class Mahasiswacont extends Controller
      */
     public function index()
     {
-        // $data= DB::table('students')->get();          Query builder ver.
-        $data = \App\Mahasiswa::all();  // ambil data via model Eloquent ver.
-        // dump($data);
-        return view('mahasiswa.index',['data'=>$data]);
+        //
+        $students = Student::all();
+        return view('student.index',['students'=> $students]);
     }
 
     /**
@@ -43,21 +43,23 @@ class Mahasiswacont extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Student $student)
     {
-        //
+        // bakal show detail dari mahasiswa
+        //  compact akan mengambil variable di controller dan dikirim ke view dgn nama yang sama
+        return view('student.show', compact('student'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Student $student)
     {
         //
     }
@@ -66,10 +68,10 @@ class Mahasiswacont extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Student $student)
     {
         //
     }
@@ -77,10 +79,10 @@ class Mahasiswacont extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Student $student)
     {
         //
     }

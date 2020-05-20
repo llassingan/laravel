@@ -28,3 +28,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'Mycont@index');
 Route::get('/about', 'Mycont@about');
 Route::get('/mahasiswa', 'MahasiswaCont@index');
+Route::get('/students', 'StudentsCont@index');
+// si {blabla} harus sama dengan parameter(variable) di fungsi show
+Route::get('/students/{student}', 'StudentsCont@show');
+Route::get('/students/create', 'StudentsCont@create');
+Route::get('/students/store', 'StudentsCont@store');
