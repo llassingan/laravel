@@ -8,6 +8,14 @@
 <div class="row">
 <div class="col-6">
 <h1 class="mt-4">Students List</h1>
+
+<!-- succes message -->
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
+
 <a href="/students/create" class="btn btn-primary my-3">Add Data</a>
 <ul class="list-group">
   @foreach($students as $s)

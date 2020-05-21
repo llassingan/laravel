@@ -26,7 +26,7 @@ class StudentsCont extends Controller
      */
     public function create()
     {
-        //
+        return view('student.create');
     }
 
     /**
@@ -37,7 +37,33 @@ class StudentsCont extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // native
+        //$student=new Student;
+        //student-> isi objek , sedangkan request->sesuai name di form
+        // $student->nama = $request->nama;
+        // $student->nim = $request->nim;
+        // $student->jurusan = $request->jurusan;
+        // $student->save();
+
+        //bawaan laravel, harus edit properti model
+        // Student::create([
+        //     'nama' => $request->nama,
+        //     'nim' => $request->nim,
+        //     'jurusan' => $request->nama
+        // ]);
+    
+        //validasi
+        $request->validate([
+            'nama'=>'required',
+            'nim'=>'required',
+            'jurusan'=>'required'
+
+        ]);
+
+        //cara ketiga, asumsi sudah ada filllable pada model
+        //akan mengambil semua isi request (yg fillable) dan di store 
+        Student::create($request->all());
+        return redirect('/students')->with('status', 'Data Added Succesfully!');
     }
 
     /**
