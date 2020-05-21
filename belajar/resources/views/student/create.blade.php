@@ -13,7 +13,7 @@
 @csrf
   <div class="form-group">
     <label for="formGroupExampleInput">Name</label>
-    <input type="text" class="form-control @error ('nama') is-invalid @enderror" id="nama" name="nama" placeholder="Enter Your Name">
+    <input type="text" class="form-control @error ('nama') is-invalid @enderror" id="nama" name="nama" placeholder="Enter Your Name" value="{{old('nama')}}">
     @error('nama') 
     <div class="invalid-feedback">{{$message}}
     </div>
@@ -23,7 +23,7 @@
   
   <div class="form-group">
     <label for="formGroupExampleInput2">NIM</label>
-    <input type="text" class="form-control @error ('nim') is-invalid @enderror" id="nim" name="nim" placeholder="Enter Your NIM">
+    <input type="text" class="form-control @error ('nim') is-invalid @enderror" id="nim" name="nim" placeholder="Enter Your NIM" value="{{old('nim')}}">
     @error('nim') 
   <div class="invalid-feedback">{{ $message }}
   </div>
@@ -32,7 +32,7 @@
   
   <div class="form-group">
     <label for="formGroupExampleInput2">Major</label>
-    <input type="text" class="form-control @error ('jurusan') is-invalid @enderror" id="major" name="jurusan" placeholder="Enter Your Major">
+    <input type="text" class="form-control @error ('jurusan') is-invalid @enderror" id="major" name="jurusan" placeholder="Enter Your Major" value="{{old('jurusan')}}">
     @error('jurusan') 
     <div class="invalid-feedback">{{ $message }}
     </div>
