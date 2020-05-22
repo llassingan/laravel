@@ -34,3 +34,11 @@ Route::get('/students/create', 'StudentsCont@create');
 
 Route::get('/students/{student}', 'StudentsCont@show');
 Route::post('/students', 'StudentsCont@store');
+Route::delete('/students/{student}', 'StudentsCont@destroy');
+Route::get('/students/{student}/edit', 'StudentsCont@edit');
+Route::patch('/students/{student}', 'StudentsCont@update');
+
+
+// untuk routing otomatis bawaan laravel
+
+//Route::resource('students','StudentCont');

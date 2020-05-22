@@ -87,7 +87,8 @@ class StudentsCont extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        //handle view form 
+        return view('student.edit', compact('student'));
     }
 
     /**
@@ -99,7 +100,21 @@ class StudentsCont extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        //validasi data
+        $request->validate([
+            'nama'=>'required',
+            'nim'=>'required',
+            'jurusan'=>'required'
+
+        ]);
+        //akses model
+        Student::where('id', $student->id)
+                ->update([
+                   'nama'=>$request->nama,
+                   'nim'=>$request->nim ,
+                   'jurusan'=>$request->jurusan
+                ]);
+                return redirect('/students/')->with('status', 'Data Changed Succesfully!');
     }
 
     /**
@@ -110,6 +125,9 @@ class StudentsCont extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        // karena sudah nge load use di bagian atas halaman, maka langsung panggil model
+        Student::destroy($student->id);
+        return redirect('/students')->with('status', 'Data Deleted Succesfully!');
+
     }
 }

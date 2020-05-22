@@ -15,13 +15,13 @@ class Mycont extends Controller
      */
     public function index()
     {
-        $n1="hoho";
+        $n1="Kelola.in";
      	return view('welcome',['n1' => $n1]);
     }
 
     public function about()
     {
-        $n2="haha";
+        $n2="This is a website that can store your data";
         return view('about',['n2' => $n2 ]);
     }
 }
